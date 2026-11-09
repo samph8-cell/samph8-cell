@@ -1,0 +1,407 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SAM PAHLAVAN STUDIO</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Vazirmatn', sans-serif;
+    background: #050711;
+    color: white;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+    radial-gradient(circle at 15% 20%, #5426c744, transparent 35%),
+    radial-gradient(circle at 85% 65%, #006bff35, transparent 35%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+header {
+    width: 90%;
+    max-width: 1200px;
+    margin: 25px auto;
+    padding: 18px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff0b;
+    border: 1px solid #ffffff20;
+    backdrop-filter: blur(20px);
+    border-radius: 18px;
+    position: sticky;
+    top: 12px;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 21px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    background: linear-gradient(90deg,#7c9dff,#ce8cff);
+    -webkit-background-clip: text;
+    color: transparent;
+    direction: ltr;
+}
+
+nav {
+    display: flex;
+    gap: 22px;
+}
+
+nav a {
+    color: #c4c7dc;
+    text-decoration: none;
+    font-size: 14px;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: #899cff;
+}
+
+.hero {
+    min-height: 78vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.tag {
+    color: #b0a2ff;
+    background: #8171ff20;
+    border: 1px solid #8171ff55;
+    padding: 10px 22px;
+    border-radius: 50px;
+    margin-bottom: 30px;
+    font-size: 13px;
+}
+
+.hero h1 {
+    font-size: clamp(35px,7vw,72px);
+    font-weight: 900;
+    line-height: 1.6;
+}
+
+.hero h1 span {
+    background: linear-gradient(90deg,#6a9cff,#bd7bff,#5ce1ff);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.hero p {
+    max-width: 650px;
+    color: #a9aec5;
+    line-height: 2.5;
+    margin: 20px auto 30px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 30px;
+    background: linear-gradient(100deg,#5145ff,#008dff);
+    border-radius: 12px;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    transition: .4s;
+    box-shadow: 0 0 25px #444cff55;
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 40px #596aff99;
+}
+
+section {
+    width: 90%;
+    max-width: 1150px;
+    margin: 100px auto;
+    scroll-margin-top: 110px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 45px;
+}
+
+.section-title span {
+    color: #8996ff;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(230px,1fr));
+    gap: 22px;
+}
+
+.card {
+    background: linear-gradient(145deg,#ffffff14,#ffffff04);
+    border: 1px solid #ffffff19;
+    padding: 35px 25px;
+    border-radius: 20px;
+    transition: .4s;
+    text-align: center;
+    backdrop-filter: blur(15px);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: #7e80ff;
+    box-shadow: 0 15px 40px #443cff30;
+}
+
+.icon {
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    margin-bottom: 15px;
+    font-size: 19px;
+}
+
+.card p {
+    color: #a8adc2;
+    line-height: 2.2;
+    font-size: 14px;
+}
+
+.about {
+    text-align: center;
+    padding: 55px 25px;
+    border-radius: 25px;
+    background: linear-gradient(120deg,#28205b66,#102d6666);
+    border: 1px solid #7777ff40;
+}
+
+.about p {
+    color: #b8bed5;
+    line-height: 2.5;
+    max-width: 750px;
+    margin: auto;
+}
+
+.contact {
+    text-align: center;
+    padding: 55px 20px;
+    background: #ffffff09;
+    border: 1px solid #ffffff17;
+    border-radius: 25px;
+}
+
+.contact p {
+    color: #aeb5cc;
+    margin: 20px 0;
+    line-height: 2;
+}
+
+.contact-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.telegram {
+    background: linear-gradient(100deg,#0088cc,#0066ff);
+}
+
+.bale {
+    background: linear-gradient(100deg,#00a878,#007b60);
+}
+
+.phone {
+    background: linear-gradient(100deg,#5145ff,#008dff);
+}
+
+footer {
+    text-align: center;
+    padding: 35px 15px;
+    border-top: 1px solid #ffffff15;
+    color: #858ba4;
+    font-size: 13px;
+}
+
+@media(max-width:650px) {
+    header {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    nav {
+        gap: 14px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        min-height: 70vh;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">SAM PAHLAVAN STUDIO</div>
+
+    <nav>
+        <a href="#home">خانه</a>
+        <a href="#services">خدمات</a>
+        <a href="#about">درباره ما</a>
+        <a href="#contact">تماس</a>
+    </nav>
+</header>
+
+<div class="hero" id="home">
+
+    <div class="tag">✦ CREATIVITY • QUALITY • DIGITAL</div>
+
+    <h1>
+        به دنیای دیجیتال<br>
+        <span>SAM PAHLAVAN STUDIO</span>
+        خوش آمدید
+    </h1>
+
+    <p>
+        از طراحی سایت تا تولید محتوا و ساخت ویدیو،
+        ما به ایده‌های شما جان می‌بخشیم.
+    </p>
+
+    <a href="#services" class="btn">مشاهده خدمات</a>
+
+</div>
+
+<section id="services">
+
+    <h2 class="section-title">
+        خدمات <span>ما</span>
+    </h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="icon">🌐</div>
+            <h3>طراحی سایت</h3>
+            <p>
+                طراحی وب‌سایت‌های مدرن، شرکتی،
+                شخصی و فروشگاهی با ظاهر حرفه‌ای.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🚀</div>
+            <h3>تولید محتوا</h3>
+            <p>
+                تولید محتوای جذاب و خلاقانه
+                برای معرفی و رشد کسب‌وکار شما.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🎬</div>
+            <h3>ادیت عکس و ساخت ویدیو</h3>
+            <p>
+                ویرایش تصاویر و ساخت ویدیوهای
+                جذاب و متفاوت.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section id="about">
+
+    <div class="about">
+        <h2 class="section-title">
+            درباره <span>ما</span>
+        </h2>
+
+        <p>
+            SAM PAHLAVAN STUDIO با هدف ارائه خدمات
+            دیجیتال و خلاقانه فعالیت می‌کند.
+            ما تلاش می‌کنیم ایده‌های شما را به
+            تجربه‌هایی زیبا و حرفه‌ای تبدیل کنیم.
+        </p>
+    </div>
+
+</section>
+
+<section id="contact">
+
+    <div class="contact">
+
+        <h2 class="section-title">
+            با ما در <span>ارتباط باشید</span>
+        </h2>
+
+        <p>
+            برای سفارش خدمات و دریافت مشاوره با ما تماس بگیرید.
+        </p>
+
+        <div class="contact-buttons">
+
+            <a class="btn phone"
+               href="tel:+989158185452">
+                ☎ تماس تلفنی
+            </a>
+
+            <a class="btn telegram"
+               href="https://t.me/Sam_ph91"
+               target="_blank">
+                ✈ تلگرام
+            </a>
+
+            <a class="btn bale"
+               href="https://ble.ir/Sam_ph13"
+               target="_blank">
+                پیام در بله
+            </a>
+
+        </div>
+
+        <p dir="ltr">09158185452</p>
+
+    </div>
+
+</section>
+
+<footer>
+    © 2026 SAM PAHLAVAN STUDIO
+    <br><br>
+    CREATE YOUR DIGITAL FUTURE
+</footer>
+
+</body>
+</html>
